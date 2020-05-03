@@ -19,6 +19,7 @@
     "apollo-link-state": "^0.4.2",
     "graphql": "^15.0.0",
     "graphql-tag": "^2.10.3",
+    "immortal-db": "^1.0.3",
     "react": "^16.13.1",
     "react-apollo": "^3.1.5",
     "react-dom": "^16.13.1",

@@ -22,7 +22,7 @@ export const TitleAni = keyframes`
     }
 `;
 
-const HomeAni = keyframes`
+export const HomeAni = keyframes`
     from{
         transform: scale(0.9);
         opacity: 0.6;

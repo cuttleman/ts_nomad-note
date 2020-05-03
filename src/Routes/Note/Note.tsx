@@ -71,7 +71,11 @@ const Note: React.SFC<NoteProps> = ({match}:NoteProps) =>{
                             <Title>
                                 {data?.note?.title}
                                 <Button>
-                                    <Link to={routes.edit(Number(id))}>
+                                    <Link to={{pathname: routes.edit(Number(id)),
+                                        state:{title: data?.note?.title, 
+                                                content: data?.note?.content,
+                                                id: data?.note?.id}
+                                                }}>
                                         <i className="fas fa-edit"></i>
                                     </Link>
                                 </Button>

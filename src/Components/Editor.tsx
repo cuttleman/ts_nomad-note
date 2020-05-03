@@ -8,6 +8,7 @@ import { Button }from "Routes/Note/Note"
 
 interface EVariables {
     variables:{
+        id?: number | {} | undefined,
         title: string | {} | undefined,
         content: string | {} | undefined
     }
@@ -84,7 +85,7 @@ const Editor: React.FC<EProps> = (props:EProps) =>{
         })
     }
     const _onSave = () =>{
-        onSave({ variables: { title:state?.title, content:state?.content } })
+        onSave({ variables: { id:state?.id, title:state?.title, content:state?.content } })
         redirect(routes.home);
     }
     return(

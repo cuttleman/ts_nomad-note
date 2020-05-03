@@ -25,3 +25,15 @@ export const CREATE_NOTE = gql`
         createNote(title: $title, content: $content) @client
     }
 `;
+
+export const EDIT_NOTE = gql`
+    mutation editNote($id: Int!, $title: String!, $content: String!) {
+        editNote(id: $id, title: $title, content: $content) @client
+    }
+`;
+
+export const DEL_NOTE = gql`
+    mutation delNote($id: Int!) {
+        delNote(id: $id) @client
+    }
+`;

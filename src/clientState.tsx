@@ -1,45 +1,9 @@
 import { NOTE_FRAGMENT } from "fragments";
 import { GET_NOTES } from "queries";
+import { saveCache, reStore } from "store";
 
 export const defaults = {
-    notes: [
-        {
-            __typename: "Note",
-            id:1,
-            title: "first",
-            content: "# hello \n - test\n- test2"
-        },
-        {
-            __typename: "Note",
-            id:2,
-            title: "first",
-            content: "second"
-        },
-        {
-            __typename: "Note",
-            id:3,
-            title: "first",
-            content: "second"
-        },
-        {
-            __typename: "Note",
-            id:4,
-            title: "first",
-            content: "second"
-        },
-        {
-            __typename: "Note",
-            id:5,
-            title: "first",
-            content: "second"
-        },
-        {
-            __typename: "Note",
-            id:6,
-            title: "first",
-            content: "second"
-        }
-    ]
+    notes: reStore(),
 };
 
 export const typeDefs = [`
@@ -91,6 +55,7 @@ export const resolvers = {
                     notes:[newNote,...notes]
                 }
             })
+            saveCache(cache);
             return newNote;
         },
         editNote: (_:any,{id,title,content}:any,{cache}:any):object|null =>{
@@ -112,6 +77,7 @@ export const resolvers = {
                 fragment: NOTE_FRAGMENT,
                 data: updateFragement
             })
+            saveCache(cache);
             return updateFragement;
         },
         delNote: (_:any,{id}:any,{cache}:any):object|null =>{
@@ -122,6 +88,7 @@ export const resolvers = {
                     notes: clearNotes
                 }
             })
+            saveCache(cache);
             return clearNotes;
         }
     }
