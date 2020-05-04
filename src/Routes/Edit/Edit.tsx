@@ -11,7 +11,6 @@ interface PropsId {
 const Edit: React.SFC<RouteComponentProps<PropsId>> = ({match, history}) =>{
     const {push} = history;
     const{params:{id}} = match;
-    console.log(id);
     return (
         <Query query={GET_NOTE} variables={{id:Number(id)}}>
             {({data}:any)=>{

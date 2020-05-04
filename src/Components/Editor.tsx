@@ -22,8 +22,8 @@ interface EProps {
 }
 interface EState{
     id?: number | {} | undefined,
-    title?: string | {} | undefined,
-    content?: string | {} | undefined
+    title?: string | undefined,
+    content?: string | undefined
 }
 
 const Container = styled.div`
