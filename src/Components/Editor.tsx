@@ -21,9 +21,9 @@ interface EProps {
     redirect: (path: string) => void
 }
 interface EState{
-    id?: number | {},
-    title?: string | {},
-    content?: string | {}
+    id?: number | {} | undefined,
+    title?: string | {} | undefined,
+    content?: string | {} | undefined
 }
 
 const Container = styled.div`
@@ -92,7 +92,7 @@ const Editor: React.FC<EProps> = (props:EProps) =>{
         <GlobalContainer>
             <Container>
                 <MContainer>
-                    <ReactMarkdown source={state?.content} />
+                    <ReactMarkdown source={state.content} />
                 </MContainer>
                 <TitleContainer>
                     <Title name="title" defaultValue={title?title:""} onChange={onChange} />
