@@ -38,7 +38,6 @@ export default createGlobalStyle`
         color: inherit;
     }
     body, html {
-        padding: 6% 0;
         font-family: 'Gugi', cursive;
         background-color: #bdc3c7;
         overflow: hidden;
@@ -46,10 +45,29 @@ export default createGlobalStyle`
 `;
 
 export const GlobalContainer = styled.div`
-    position: absolute;
+    position: fixed;
     max-width: 350px;
     left: 0;
     right: 0;
+    top: 100px;
     margin: auto;
     animation: ${HomeAni} 0.4s linear forwards;
+`;
+
+export const HomeBtn = styled.button`
+    position: fixed;
+    top: 45px;
+    left: 20px;
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+        font-size: 30px;
+    }
+    cursor: pointer;
 `;

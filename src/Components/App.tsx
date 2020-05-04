@@ -5,10 +5,12 @@ import Notes from 'Routes/Notes';
 import Note from 'Routes/Note';
 import Add from 'Routes/Add';
 import Edit from 'Routes/Edit';
+import HomeBtn from "Components/HomeBtn";
 
-function App() {
+const App: React.SFC = () => {
   return (
     <Router>
+      <HomeBtn />
       <Switch>
         <Route path={routes.home} exact component={Notes} />
         <Route path={routes.note()}  component={Note} />
